@@ -10,21 +10,29 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href=".styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
     <title>Movie Time</title>
   </head>
   <body>
     <header>
-      <h1>Find your film</h1>
-      <a href="./watchlist.html">My Watchlist</a>
-      <form>
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="search" name="movie" placeholder="Search for a movie" />
-        <button type="submit">Search</button>
-      </form>
+      <div class="container">
+        <h1>Find your film</h1>
+        <a href="./watchlist.html">My Watchlist</a>
+        <form>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input
+              type="search"
+              name="movie"
+              placeholder="Search for a movie"
+            />
+          </div>
+          <button type="submit">Search</button>
+        </form>
+      </div>
     </header>
     <main>
-      <section>
+      <section class="container">
         <i class="fa-solid fa-film"></i>
         <p>Start exploring</p>
       </section>

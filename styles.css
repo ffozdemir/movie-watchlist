@@ -1,0 +1,140 @@
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #0056b3;
+  --text-color: #333;
+  --text-color-header: #fff;
+  --background-color: #f0f0f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  background-color: var(--background-color);
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./assets/images/pexels-cottonbro-3945321.jpg") no-repeat center
+      center/cover;
+  opacity: 0.8;
+  height: 300px;
+  padding: 20px;
+  position: relative;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+header .container form {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 900px;
+  width: 95%;
+}
+
+header .container h1 {
+  font-size: clamp(1.4rem, 1.4rem + 1.4vw, 3rem);
+  text-align: center;
+  color: var(--text-color-header);
+}
+
+header .container a {
+  text-decoration: none;
+  color: var(--text-color-header);
+  font-size: clamp(1rem, 1rem + 0.4vw, 1.3rem);
+  transition: all 0.3s;
+}
+
+header .container a:hover {
+  border-bottom: 4px solid var(--secondary-color);
+  padding-bottom: 3px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-wrapper {
+  position: relative;
+  width: 75%;
+  display: flex;
+}
+
+.input-wrapper i {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--primary-color);
+}
+
+.input-wrapper input,
+form button {
+  padding: 15px;
+  font-size: clamp(0.8rem, 0.8rem + 0.4vw, 1.3rem);
+}
+
+.input-wrapper input {
+  border: none;
+  border-radius: 5px 0 0 5px;
+  width: 100%;
+  padding-left: 30px;
+  color: var(--primary-color);
+}
+
+.input-wrapper input:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.input-wrapper input::placeholder {
+  color: var(--primary-color);
+}
+
+form button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 15px;
+  border-radius: 0 5px 5px 0;
+  width: 25%;
+  font-size: clamp(0.8rem, 0.8rem + 0.4vw, 1.3rem);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  overflow: hidden;
+}
+
+form button:hover {
+  background-color: var(--secondary-color);
+}
+
+form button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+section.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 20px;
+}
