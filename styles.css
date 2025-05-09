@@ -194,6 +194,7 @@ section.container {
   justify-content: center;
   align-items: center;
   gap: 10px;
+  width: 100%;
 }
 
 .movie-info p {
@@ -276,10 +277,13 @@ section.container {
   .movie-card {
     flex-direction: row;
     gap: 30px;
+    width: 100%;
   }
 
   .movie-card img {
     width: 15%;
+    object-fit: cover;
+    align-self: flex-start;
   }
 
   .movie-info {
@@ -293,6 +297,7 @@ section.container {
 
   .movie-info p {
     text-align: left;
+    max-width: 100%;
   }
 
   header .container {
