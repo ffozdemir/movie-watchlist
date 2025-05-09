@@ -1,9 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
 :root {
   --primary-color: #007bff;
   --secondary-color: #0056b3;
   --text-color: #6b7280;
   --text-color-header: #fff;
   --background-color: #fffff5;
+  --font-family: "Inter", sans-serif;
 }
 
 * {
@@ -13,7 +16,7 @@
 }
 
 body {
-  font-family: "Times New Roman", Times, serif;
+  font-family: var(--font-family);
   background-color: var(--background-color);
 }
 
@@ -98,6 +101,7 @@ form button {
   width: 100%;
   padding-left: 30px;
   color: var(--primary-color);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
 .input-wrapper input:focus {
@@ -133,6 +137,9 @@ form button:focus {
 }
 
 section.container {
+  display: grid;
+  place-content: center;
+  min-height: calc(100vh - 300px);
   padding: 20px;
 }
 
@@ -160,6 +167,7 @@ section.container {
   align-items: center;
   gap: 20px;
   width: 100%;
+  padding-top: 30px;
 }
 
 .movies-list :last-child {
@@ -178,7 +186,6 @@ section.container {
 
 .movie-card img {
   width: 50%;
-  border-radius: 10px;
 }
 
 .movie-info {
@@ -204,9 +211,15 @@ section.container {
   gap: 10px;
 }
 
+.movie-header p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .movie-details button {
   border: none;
-  background: none;
+  background: transparent;
   font-size: clamp(0.8rem, 0.8rem + 0.4vw, 1.3rem);
   cursor: pointer;
   display: flex;
@@ -219,7 +232,8 @@ section.container {
   color: var(--secondary-color);
 }
 
-.movie-details button > i {
+.movie-details button > i,
+.watchlist-without-movies p > i {
   background-color: var(--primary-color);
   color: white;
   padding: 5px;
@@ -230,11 +244,58 @@ section.container {
   transition: background-color 0.3s;
 }
 
-.movie-details button > i:hover {
+.movie-details button > i:hover,
+.watchlist-without-movies p > i:hover {
   background-color: var(--secondary-color);
 }
 
 .fa-star {
   color: #f59e0b;
   font-size: 0.8rem;
+}
+
+.watchlist-without-movies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.watchlist-without-movies :first-child {
+  color: #dfdddd;
+}
+
+.watchlist-without-movies p {
+  font-size: 1.2rem;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .movie-card {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .movie-card img {
+    width: 15%;
+  }
+
+  .movie-info {
+    align-items: flex-start;
+  }
+
+  .movie-details {
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .movie-info p {
+    text-align: left;
+  }
+
+  header .container {
+    justify-content: space-between;
+  }
 }
