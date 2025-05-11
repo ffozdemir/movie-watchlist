@@ -1,3 +1,5 @@
+import "./styles.css";
+
 const sectionContainerEl = document.querySelector("section.container");
 
 const getWatchListFromLocalStorage = () => {

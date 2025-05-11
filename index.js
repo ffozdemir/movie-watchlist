@@ -1,10 +1,12 @@
+import "./styles.css";
+
 const sectionContainerEl = document.querySelector("section.container");
 const searchFormEl = document.querySelector("form.search-form");
 
 const fetchMovieImdbId = async (search) => {
   try {
     const response = await fetch(
-      `https://www.omdbapi.com/?apikey=6a8ebd02&s=${search}`
+      `https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&s=${search}`
     );
     const data = await response.json();
     if (data.Response === "True") {
@@ -23,7 +25,7 @@ const fetchMovieImdbId = async (search) => {
 const fetchMovieDetails = async (imdbID) => {
   try {
     const response = await fetch(
-      `https://www.omdbapi.com/?apikey=6a8ebd02&i=${imdbID}`
+      `https://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&i=${imdbID}`
     );
     const data = await response.json();
     if (data.Response === "True") {
