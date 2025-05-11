@@ -1,5 +1,7 @@
 # Movie Watchlist
 
+[Live Demo](https://harmonious-phoenix-dd5c22.netlify.app)
+
 ## Description
 
 Movie Watchlist is a web application that allows users to search for movies and manage their personal watchlist. Users can find movies using the OMDb API, view details such_as rating, runtime, genre, and plot, and add or remove movies from their watchlist. The watchlist is saved locally in the browser using `localStorage`.
