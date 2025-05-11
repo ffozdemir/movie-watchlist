@@ -36,18 +36,18 @@ const createMovieCardWatchlist = (movie) => {
                                        alt="${title} poster"
                                        class="movie-poster"
                                        />
-                                       <div class="movie-info"">
+                                       <div class="movie-info">
                                           <div class="movie-header">
                                              <h2>
                                                 ${title}
                                              </h2>
-                                             <p><i class="fa-solid fa-star"></p></i><p class="movie-rating"> ${rating}</p>
+                                             <p><i class="fa-solid fa-star"></i><span class="movie-rating"> ${rating}</span></p>
                                           </div>
                                           <div class="movie-details">
                                              <p class = "movie-runtime">${runtime}</p>
                                              <p class="movie-genre">${genre}</p>
                                              <button class="remove-from-watchlist" data-movie-id="${id}">
-                                                <i class="fa-solid fa-minus watchlist-icon"" ></i>Remove
+                                                <i class="fa-solid fa-minus watchlist-icon"></i>Remove
                                              </button>
                                           </div>
                                           <p class="movie-plot">
@@ -60,17 +60,15 @@ const createMovieCardWatchlist = (movie) => {
 
 const removeMovieFromWatchList = (movieId) => {
   const watchList = getWatchListFromLocalStorage();
-  const updatedWatchList = Array.from(watchList).filter(
-    (movie) => movie.id !== movieId
-  );
+  const updatedWatchList = watchList.filter((movie) => movie.id !== movieId);
   localStorage.setItem("watchlist", JSON.stringify(updatedWatchList));
   renderWatchList();
 };
 const handleMovieCardClick = (event) => {
-  let button = event.target;
-  if (button.classList.contains("watchlist-icon")) {
-    button = button.closest("button.remove-from-watchlist");
-  }
+  const target = event.target;
+  const button = target.classList.contains("watchlist-icon")
+    ? target.closest("button.remove-from-watchlist")
+    : target;
   if (button && button.classList.contains("remove-from-watchlist")) {
     const movieId = button.dataset.movieId;
     removeMovieFromWatchList(movieId);

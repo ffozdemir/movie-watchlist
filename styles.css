@@ -6,6 +6,8 @@
   --text-color: #6b7280;
   --text-color-header: #fff;
   --background-color: #fffff5;
+  --background-color-dark: #333;
+  --text-color-dark: #f4f4f4;
   --font-family: "Inter", sans-serif;
 }
 
@@ -179,7 +181,7 @@ section.container {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border-bottom: 3px solid #e5e7eb;
+  border-bottom: 3px solid var(--primary-color);
   padding-bottom: 20px;
   gap: 10px;
 }
@@ -273,6 +275,7 @@ section.container {
   font-weight: bold;
 }
 
+/* Media Queries */
 @media (min-width: 768px) {
   .movie-card {
     flex-direction: row;
@@ -302,5 +305,18 @@ section.container {
 
   header .container {
     justify-content: space-between;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+  }
+
+  .add-to-watchlist,
+  .remove-from-watchlist,
+  .movie-details p,
+  p.movie-plot {
+    color: var(--text-color-dark);
   }
 }
